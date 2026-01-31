@@ -1,6 +1,6 @@
 [gd_scene load_steps=54 format=3 uid="uid://fyyoe5vf3xm1"]
 
-[ext_resource type="Script" uid="uid://lpi4dwqsr2s7" path="res://scripts/player_animation.gd" id="1_g2brh"]
+[ext_resource type="Script" uid="uid://c0r18h3f1reop" path="res://scenes/character_body_2d.gd" id="1_dn4c7"]
 [ext_resource type="Texture2D" uid="uid://wohcy5vr8w4g" path="res://assets/player/soldier_left.png" id="2_dn4c7"]
 [ext_resource type="Texture2D" uid="uid://13lyjbhqtedh" path="res://assets/player/Soldier_right.png" id="3_4vejd"]
 
@@ -384,16 +384,15 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4blw"]
-radius = 5.0
+radius = 4.0
 
 [node name="player" type="CharacterBody2D"]
-script = ExtResource("1_g2brh")
+script = ExtResource("1_dn4c7")
 
 [node name="player_animation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_abs25")
 animation = &"idle_right"
 autoplay = "idle_right"
-frame_progress = 0.90955096
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
@@ -401,3 +400,5 @@ shape = SubResource("CircleShape2D_g4blw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+
+[connection signal="animation_finished" from="player_animation" to="." method="_on_player_animation_animation_finished"]
