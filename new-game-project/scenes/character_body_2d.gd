@@ -28,14 +28,8 @@ func _physics_process(_delta):
 
 	#animation
 	if  velocity != Vector2.ZERO :
-		if Input.is_action_just_pressed("attack"):
-			animation_player.play("attack_right")
-		else:
-			animation_player.play("run_right")
+		animation_player.play("run_right")
 	else:
-		if Input.is_action_just_pressed("attack"):
-			animation_player.play("attack_right")
-		else:
-			animation_player.play("idle_right")
+		animation_player.play("idle_right")
 	
 	
