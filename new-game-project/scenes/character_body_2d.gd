@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var animation_player = $player_animation
-@export var speed = 100
+@export var speed = 200
 
 
 func get_input():

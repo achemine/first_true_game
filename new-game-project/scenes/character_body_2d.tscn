@@ -387,6 +387,8 @@ animations = [{
 radius = 4.0
 
 [node name="player" type="CharacterBody2D"]
+visibility_layer = 3
+y_sort_enabled = true
 script = ExtResource("1_dn4c7")
 
 [node name="player_animation" type="AnimatedSprite2D" parent="."]
@@ -399,6 +401,7 @@ position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_g4blw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 3)
 zoom = Vector2(2, 2)
 
 [connection signal="animation_finished" from="player_animation" to="." method="_on_player_animation_animation_finished"]
